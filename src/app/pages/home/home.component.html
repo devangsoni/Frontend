@@ -1,0 +1,29 @@
+ Welcome!
+<div>
+  <a [routerLink]="['/profile']">My Profile</a>
+</div>
+Search Other Users By First Name
+<input type="search" [(ngModel)]="searchKeyWord">
+<button (click)="serch()">Search</button>
+<div class="app-component">
+  <h1 class="text-center">Result Users table</h1>
+  <table>
+    <tr>
+      <th>First name</th>
+      <th>Last Name</th>
+      <th>email</th>
+    </tr>
+    <tr *ngFor="let user of userData">
+      <td>{{user.firstName}}</td>
+      <td>{{user.lastName}}</td>
+      <td>{{user.email}}</td>
+    </tr>
+  </table>
+
+  <p>
+    <button (click)="logout()">logout</button>
+  </p>
+  <p>
+    <button (click)="delete()">Delete My Account</button>
+  </p>
+  <ng4-loading-spinner> </ng4-loading-spinner>

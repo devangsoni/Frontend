@@ -1,0 +1,26 @@
+<div>
+  <div>
+    <div>
+      <form (ngSubmit)="login(loginForm)" [formGroup]="loginForm">
+        <div>
+          <label for="email">Email/username:</label>
+          <input type="username" name="username" id="username" formControlName="username">
+          <span *ngIf="loginForm.get('username').hasError('required') && loginForm.controls['username'].untouched && flag">Please Enter username/email</span>
+          <span *ngIf="!loginForm.controls['username'].valid && loginForm.get('username').touched">Please Enter Valid Email/username</span>
+        </div>
+        <div>
+          <label for="pwd">Password:</label>
+          <input type="password" name="pwd" id="pwd" formControlName="password">
+          <span *ngIf="loginForm.get('password').hasError('required') && loginForm.controls['password'].untouched && flag">Please Enter Password</span>
+        </div>
+        <div>
+          <button type="submit">Sign In
+            <i class="btn theme-btn"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div>
+
+    <ng4-loading-spinner> </ng4-loading-spinner>

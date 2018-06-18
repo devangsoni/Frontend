@@ -1,0 +1,55 @@
+<div>
+  <form [formGroup]="signupForm" (ngSubmit)="register(signupForm)">
+    <div>
+      <div>
+        <h2>Signup Here.</h2>
+      </div>
+      <div>
+        <label for="email">First Name</label>
+        <input type="text" formControlName="firstName" name="firstName">
+        <span *ngIf="signupForm.get('firstName').hasError('required') && signupForm.controls['firstName'].untouched && flag">Please Enter First Name</span>
+        <span *ngIf="!signupForm.controls['firstName'].valid && signupForm.get('firstName').touched ">Please Enter Valid First Name</span>
+      </div>
+
+      <div>
+        <label for="email">Last Name</label>
+        <input formControlName="lastName" type="text" name="lastName">
+        <span *ngIf="signupForm.get('lastName').hasError('required') && signupForm.controls['lastName'].untouched && flag">Please Enter Last Name</span>
+        <span *ngIf="!signupForm.controls['lastName'].valid && signupForm.get('lastName').touched">Please Enter Valid Last Name</span>
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input formControlName="email" type="text" name="email">
+        <span *ngIf="!signupForm.controls['email'].valid && signupForm.get('email').touched">Please Enter Valid Email</span>
+        <span *ngIf="!signupForm.controls['email'].valid && signupForm.get('email').touched">Please Enter email</span>
+
+      </div>
+
+      <div>
+        <label for="email">username</label>
+        <input formControlName="username" type="text">
+        <span *ngIf="signupForm.get('username').hasError('required') && signupForm.controls['username'].untouched && flag">Please Enter username</span>
+        <span *ngIf="!signupForm.controls['username'].valid && signupForm.get('username').touched">Please Enter Valid username </span>
+      </div>
+
+      <div>
+        <label for="email">password</label>
+        <input formControlName="password" type="password">
+        <span *ngIf="signupForm.get('password').hasError('required') && signupForm.controls['password'].untouched && flag">Please Enter Password</span>
+        <span *ngIf="!signupForm.controls['password'].valid && signupForm.get('password').touched">Please Enter Valid Password.it must contain uppercase, lowercase, number and special charecters</span>
+      </div>
+
+      <div>
+        <label for="email">Date of birth</label>
+        <input formControlName="dateOfBirth" type="date">
+        <span *ngIf="signupForm.get('dateOfBirth').hasError('required') && signupForm.controls['dateOfBirth'].untouched && flag">Please Enter Date of birth</span>
+      </div>
+
+    </div>
+    <div>
+      <button type="submit">Sign up</button>
+    </div>
+  </form>
+</div>
+<ng4-loading-spinner> </ng4-loading-spinner>

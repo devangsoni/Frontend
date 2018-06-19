@@ -21,8 +21,8 @@
       <div>
         <label for="email">Email Address</label>
         <input formControlName="email" type="text" name="email">
-        <span *ngIf="!signupForm.controls['email'].valid && signupForm.get('email').touched">Please Enter Valid Email</span>
-        <span *ngIf="!signupForm.controls['email'].valid && signupForm.get('email').touched">Please Enter email</span>
+        <span *ngIf="!signupForm.controls['email'].valid && signupForm.controls['email'].untouched && flag">Please Enter Valid Email</span>
+        <span *ngIf="!signupForm.get('email').hasError('required') && signupForm.get('email').touched">Please Enter email</span>
 
       </div>
 
